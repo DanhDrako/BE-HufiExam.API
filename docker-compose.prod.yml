@@ -1,0 +1,36 @@
+version: '3'
+networks:
+  app-tier:
+    driver: bridge
+volumes:
+  PROD_MY_HUFIER_DB_BACKUP:
+services:
+  PROD_MY_HUFIER_SERVICE_DB:
+    container_name: PROD_MY_HUFIER_SERVICE_DB_POSTGRES
+    image: postgres:11
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - ${DB_POSTGRES_PORT}:5432
+    volumes:
+      - PROD_MY_HUFIER_DB_BACKUP:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_DATABASE}
+      PG_DATA: /var/lib/postgresql/data
+    networks:
+      - app-tier
+  PROD_MY_HUFIER_ADMINER:
+    container_name: PROD_MY_HUFIER_SERVICE_DB_ADMINER
+    image: adminer
+    depends_on:
+      - PROD_MY_HUFIER_SERVICE_DB
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - ${DB_ADMINER_PORT}:8080
+    networks:
+      - app-tier
