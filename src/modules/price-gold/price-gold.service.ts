@@ -32,10 +32,10 @@ export class PriceGoldService {
     this.priceGoldRepo = this.connection.getRepository(PriceGold);
     this.create();
     this.deleteWhere();
-    this.setIntervalCheckServer(
-      { thang: 'huytagicloud@gmail.com', viet: 'vietsaclo@gmail.com' },
-      process.env.SET_URL_SERVER_CHECK,
-    );
+    //this.setIntervalCheckServer(
+      //{ danh: 'danhdc2001@gmail.com' },
+      //process.env.SET_URL_SERVER_CHECK,
+    //);
   }
 
   async crawlDataInsertDB() {
@@ -183,8 +183,7 @@ export class PriceGoldService {
         this.logger.log(`[ (@.@) Is Server Error: ${isError} (@.@) ]`);
       // Server Error ?
       if (isError) {
-        this.sendEmailCheck(toMail.thang, url);
-        this.sendEmailCheck(toMail.viet, url);
+        //this.sendEmailCheck(toMail.danh, url);
         if (!IS_CURRENT_SERVER_DOWN) {
           IS_CURRENT_SERVER_DOWN = true;
           clearInterval(INTERVAL_CHECK_SERVER);
