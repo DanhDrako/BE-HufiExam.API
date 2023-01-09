@@ -3,17 +3,17 @@ networks:
   app-tier:
     driver: bridge
 volumes:
-  DEV_MY_HUFIER_DB_BACKUP:
+  DEV_HUFI_EXAM_DB_BACKUP:
 services:
-  DEV_MY_HUFIER_SERVICE_DB:
-    container_name: DEV_MY_HUFIER_SERVICE_DB_POSTGRES
+  DEV_HUFI_EXAM_SERVICE_DB:
+    container_name: DEV_HUFI_EXAM_SERVICE_DB_POSTGRES
     image: postgres:11
     env_file:
       - .env
     ports:
       - ${DB_POSTGRES_PORT}:5432
     volumes:
-      - DEV_MY_HUFIER_DB_BACKUP:/var/lib/postgresql/data
+      - DEV_HUFI_EXAM_DB_BACKUP:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: ${DB_USERNAME}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
@@ -21,11 +21,11 @@ services:
       PG_DATA: /var/lib/postgresql/data
     networks:
       - app-tier
-  DEV_MY_HUFIER_ADMINER:
-    container_name: DEV_MY_HUFIER_SERVICE_DB_ADMINER
+  DEV_HUFI_EXAM_ADMINER:
+    container_name: DEV_HUFI_EXAM_SERVICE_DB_ADMINER
     image: adminer
     depends_on:
-      - DEV_MY_HUFIER_SERVICE_DB
+      - DEV_HUFI_EXAM_SERVICE_DB
     env_file:
       - .env
     ports:

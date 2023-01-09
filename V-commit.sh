@@ -1,9 +1,9 @@
 sudo docker-compose -f docker-compose.dev.yml down
 git add .
-git commit -m "Set isRealTest"
+git commit -m "fix"
 git checkout develop
 git pull
-git checkout dev/vietnq
+git checkout dev/danh
 git rebase develop
 git push -f
 yarn build
