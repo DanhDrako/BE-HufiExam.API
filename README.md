@@ -1,6 +1,6 @@
-# BackEnd Myhufier!
+# BackEnd HUFI EXAM!
 
-Welcome to **Myhufier**
+Welcome to **HUFI EXAM**
 ## Install ?
 1. Window: 
 
@@ -12,15 +12,14 @@ Welcome to **Myhufier**
 	- `sudo apt install docker.io`
 	- `apt install docker-compose`
 ## How to run ?
-1. `git clone -b develop https://github.com/vietsaclo/BE-MyHufier.git`
-2. `cd BE-MyHufier/`
-3. `yarn`
+1. `git clone -b develop https://github.com/DanhDrako/BE-HufiExam.API`
+2. `cd BE-HufiExam.API/`
+3. `npm i`
 4.  with linux `sudo docker-compose -f docker-compose.dev.yml up -d`
 5. with window `docker-compose -f docker-compose.dev.yml up -d`
-6. `yarn start`
+6. `npm run start`
 ## Requirements ?
 - npm version 6.14.11 or higher `npm -v`
-- yarn version 1.22.2 or higher `yarn -v`
 - node version 12.0 or higher `node -v`
 - docker version 20.10.7 or higher `docker -v`
 - ...
