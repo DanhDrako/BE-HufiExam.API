@@ -74,8 +74,8 @@ export class PostService {
     const newPost = plainToClass(Post, { ...dto, cate: cate, tags: [], title: dto.title.trim(), });
     newPost.slug = PublicModules.fun_changeToSlug(newPost.title);
     newPost.own = user;
-    // newPost.commited = isAdmin;
-    newPost.commited = true;
+    newPost.commited = isAdmin;
+    //newPost.commited = true;
 
     // tags ?
     if (dto.tags) {

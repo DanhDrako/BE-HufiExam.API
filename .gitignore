@@ -105,3 +105,5 @@ dist
 #===== MY CONFIG
 uploads/images/
 uploads/images_ck/
+#=====
+package-lock.json
