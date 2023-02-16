@@ -24,7 +24,7 @@ export class ResetPasswordTemplate {
           style="text-decoration: none;color: rgb(39, 58, 226); cursor: pointer;">Bạn đã có tài khoản? đăng nhập tại
           đây</a></p>
       <p>Cảm ơn bạn đã đăng ký tài khoản trên: <a href="${homeLink}" style="text-decoration: none; color: #333; cursor: pointer;">
-          Myhufier.vn</a></p>
+        hufidoc.online</a></p>
     </div>
   </div>
 </div>
